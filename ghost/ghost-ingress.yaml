@@ -1,0 +1,22 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: ghost
+  namespace: default
+  annotations:
+    kubernetes.io/ingress.class: nginx
+#    kubernetes.io/tls-acme: 'true'
+#    nginx.ingress.kubernetes.io/force-ssl-redirect: 'true'
+spec:
+  rules:
+    - host: blog.laurentgrangeau.fr
+      http:
+        paths:
+          - backend:
+              serviceName: ghost
+              servicePort: 2368
+            path: /
+#  tls:
+#    - hosts:
+#        - "blog.laurentgrangeau.fr"
+#      secretName: blog.laurentgrangeau.fr-secret
