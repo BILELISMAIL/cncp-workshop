@@ -16,7 +16,7 @@ Il y a deux possibilités :
 - Utiliser [CloudShell](https://cloud.google.com/shell/docs/quickstart) qui est accessible depuis la console Google Cloud (recommandé)
 - ou Installer les clients
   - [gcloud](https://cloud.google.com/sdk/docs/quickstarts)
-  - [kubect](https://cloud.google.com/container-engine/docs/quickstart#install_the_gcloud_command-line_interface)
+  - [kubectl](https://cloud.google.com/container-engine/docs/quickstart#install_the_gcloud_command-line_interface)
 
 Il est possible d'ajouter la [complétion bash/zsh](http://kubernetes.io/docs/user-guide/kubectl/kubectl_completion) pour kubectl.
 
@@ -25,7 +25,7 @@ Il est possible d'ajouter la [complétion bash/zsh](http://kubernetes.io/docs/us
 Avant de commencer les travaux pratiques, télécharger (clonez) les fichiers dont vous aurez besoin.
 
 ```
-$ git clone https://github.com/jcsirot/cncp-workshop
+$ git clone https://github.com/theGarageBandOfIT/cncp-workshop
 $ cd cncp-workshop
 ```
 
