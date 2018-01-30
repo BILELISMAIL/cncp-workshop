@@ -1,5 +1,10 @@
 # Déployer un blog sur GKE
 
+[![License: CC BY-SA 4.0](https://img.shields.io/badge/License-CC%20BY--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-sa/4.0/)
+
+Ce travail est mis à disposition selon les termes de la Licence Creative Commons Attribution - Partage dans les Mêmes Conditions 4.0 International.
+
+
 Cet atelier est basé sur l'exemple de Kelsey Hightower lors de la KubeCon Europe 2016
 [Kubecon Talk](https://github.com/kelseyhightower/talks/tree/master/kubecon-eu-2016/demo)
 
@@ -20,7 +25,7 @@ Il est possible d'ajouter la [complétion bash/zsh](http://kubernetes.io/docs/us
 Avant de commencer les travaux pratiques, télécharger (clonez) les fichiers dont vous aurez besoin.
 
 ```
-$ git clone https://github.com/jcsirot/cncp-workshop 
+$ git clone https://github.com/jcsirot/cncp-workshop
 $ cd cncp-workshop
 ```
 
@@ -111,7 +116,7 @@ $ kubectl create namespace foo
 $ export NAMESPACE=foo
 ```
 
-**Attention:** ne pas oublier d’initialiser la variable d'environnement NAMESPACE 
+**Attention:** ne pas oublier d’initialiser la variable d'environnement NAMESPACE
 
 Lister les namespaces
 
@@ -205,7 +210,7 @@ NAME      CLUSTER-IP     EXTERNAL-IP   PORT(S)    AGE
 mysql     10.7.247.214   <none>        3306/TCP   2m
 ```
 
-On peut alors se connecter au service pour vérifier l’existence de la base de données `ghost`. 
+On peut alors se connecter au service pour vérifier l’existence de la base de données `ghost`.
 
 Les paramètres de connexion ont été configurés dans le fichier `database/mysql-deployment.yaml`.
 
@@ -215,7 +220,7 @@ Créer un *deployment* en mode interactif qui permettra d’utiliser le client m
 $ kubectl run -ti mysqlcli --image mysql --command /bin/bash
 Waiting for pod default/foo-1498585132-lfpv3 to be running, status is Pending, pod ready: false
 If you don't see a command prompt, try pressing enter.
-root@foo-1498585132-lfpv3:/# 
+root@foo-1498585132-lfpv3:/#
 ```
 
 On peut alors exécuter le client mysql en indiquant le nom de domaine de service mysql.
@@ -252,7 +257,7 @@ Créer le service ghost.
 $ kubectl create -f ghost/ghost-service.yaml
 ```
 
-Au bout de quelques secondes un loadbalancer Google exposera le service ghost. 
+Au bout de quelques secondes un loadbalancer Google exposera le service ghost.
 
 **Note:** il faut bien attendre que le loadbalancer soit créé avant de passer à l’étape suivante.
 
@@ -289,7 +294,7 @@ secret "ghost" created
 Le fichier de configuration nginx pour ghost est très simple et peut donc être stocké dans un *ConfigMap*.
 
 ```
-$ kubectl create configmap nginx-ghost --from-file=configs/ghost.conf 
+$ kubectl create configmap nginx-ghost --from-file=configs/ghost.conf
 configmap "nginx-ghost" created
 ```
 
