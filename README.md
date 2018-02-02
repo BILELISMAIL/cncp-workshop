@@ -56,7 +56,12 @@ $ gcloud container clusters create --help
 **Note:** ne pas oublier de changer le nom du cluster, ici *cncp*.
 
 ```
-$ gcloud container clusters create cncp --zone europe-west1-b --additional-zones=europe-west1-c --machine-type n1-standard-2 --num-nodes=1 --no-enable-cloud-monitoring --no-enable-cloud-logging
+gcloud container clusters create cncp     \
+        --zone=europe-west1-b --additional-zones=europe-west1-c \
+        --machine-type n1-standard-2 --disk-size=30    \
+        --num-nodes=1 --min-nodes=1 --max-nodes=3      \
+        --network=$my_network                          \
+        --no-enable-cloud-monitoring --no-enable-cloud-logging
 ```
 
 La commande ci-dessus crée un cluster constitué de 2 noeuds (suffisant pour l’exercice). Les noeuds seront distribués sur 2 zones pour assurer une disponibilité optimale. Enfin les options de supervision et de logs ne sont pas utilisées.
